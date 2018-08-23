@@ -2,10 +2,13 @@
 <html lang="en">
 <head>
     {% include "head.html" %}
+    <title>
+        {% block title %}{% endblock %}
+    </title>
 </head>
 <body>
 {% if user.is_authenticated %}
-    <a href="{% url "home" %}">Books</a> |
+    <a href="{% url "book-list" %}">Books</a> |
     <a href="{% url "rack-list" %}">Racks</a> |  Loged in as {{ user.username }} <a href="{% url "logout" %}">logout</a>
     <br>
     <br>

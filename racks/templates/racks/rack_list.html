@@ -1,20 +1,23 @@
 {% extends "base.html" %}
-
+{% block title %}
+    Rack | List
+{% endblock %}
 {% block content %}
-<table>
-        <thead>
-            <tr>
-                <td colspan="2">Rack Name</td>
-                <td>Total Books</td>
-            </tr>
-        </thead>
-        <tbody>
-        {% for rack in racks %}
-            <tr>
-                <td colspan="2"><a href="{% url "rack-detail" rack.id %}">{{ rack.name }}</a></td>
-                <td>{{ rack.book_set.all.count }}</td>
-            </tr>
-        {% endfor %}
-        </tbody>
+    <h2>Rack List</h2>
+    <table>
+            <thead>
+                <tr>
+                    <td colspan="2">Rack Name</td>
+                    <td>Total Books</td>
+                </tr>
+            </thead>
+            <tbody>
+            {% for rack in racks %}
+                <tr>
+                    <td colspan="2"><a href="{% url "rack-detail" rack.id %}">{{ rack.name }}</a></td>
+                    <td>{{ rack.book_set.all.count }}</td>
+                </tr>
+            {% endfor %}
+            </tbody>
     </table>
 {% endblock %}

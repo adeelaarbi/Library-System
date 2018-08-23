@@ -1,7 +1,10 @@
 {% extends "base.html" %}
+{% block title %}
+    Book | List
+{% endblock %}
 
 {% block content %}
-<form action="{% url "home" %}" method="get">
+<form action="{% url "book-list" %}" method="get">
     <input type="text" name="query" placeholder="Search Book By Title, Author or Year">
     <button>Search</button>
 </form>
