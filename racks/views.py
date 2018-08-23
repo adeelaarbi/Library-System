@@ -24,6 +24,10 @@ def signup(request):
     return render(request, 'racks/signup.html', {'form': form})
 
 
+def index(request):
+    return redirect("book-list")
+
+
 class RackListView(ListView):
     model = Rack
     template_name = "racks/rack_list.html"
