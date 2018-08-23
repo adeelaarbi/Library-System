@@ -25,7 +25,7 @@ SECRET_KEY = 'y0m#d+jy5pw1z$(g4vft(o*!k^=qml+6nt=h!7$j=dp_1oh@(s'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["adeelbooksmanagement.herokuapp.com"]
 
 
 # Application definition
