@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+{% block content %}
+<form action="{% url "home" %}" method="get">
+    <input type="text" name="query" placeholder="Search Book By Title, Author or Year">
+    <button>Search</button>
+</form>
+<br>
+<table>
+    {% if books %}
+        <h2>Books</h2>
+        <br>
+        <thead>
+            <tr>
+                <td>Rack Name</td>
+                <td>Book Title</td>
+                <td>Author Name</td>
+                <td>year Published</td>
+            </tr>
+        </thead>
+        <tbody>
+            {% for book in books %}
+            <tr>
+                <td>{{ book.rack.name }}</td>
+                <td>{{ book.title }}</td>
+                <td>{{ book.author }}</td>
+                <td>{{ book.published }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    {% else %}
+        <tbody>
+            <tr>
+                No Book Found!
+            </tr>
+        </tbody>
+    {% endif %}
+</table>
+{% endblock %}

@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h3>Rack | {{ rack.name }}</h3>
+<table>
+    <thead>
+        <tr>
+            <td>Book Title</td>
+            <td>Author Name</td>
+            <td>Year Published</td>
+        </tr>
+    </thead>
+    <tbody>
+        {% for book in rack.book_set.all %}
+        <tr>
+            <td>{{ book.title }}</td>
+            <td>{{ book.author }}</td>
+            <td>{{ book.published }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+<br>
+{% endblock %}
